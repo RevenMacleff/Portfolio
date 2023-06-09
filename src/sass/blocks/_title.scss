@@ -1,0 +1,67 @@
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 60px;
+  color: #000000;
+  &_fz16 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &_fz48 {
+    font-size: 48px;
+    max-width: 700px;
+  }
+  &_fz14 {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  &_fz20 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  &_fz36 {
+    font-size: 36px;
+  }
+}
+/* 992 */
+/* Стили работают только если монитор меньше 1200 пикселей */
+@media (max-width: 1200px) {
+  .title {
+    &_fz48 {
+      font-size: 36px;
+    }
+  }
+}
+
+/* 768 */
+@media (max-width: 991px) {
+  .title {
+    &_fz48 {
+      font-size: 32px;
+      line-height: 50px;
+    }
+  }
+}
+
+/* 576 */
+@media (max-width: 767px) {
+  .title {
+    &_fz48 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+}
+/* 320px */
+@media (max-width: 575px) {
+  .title {
+    &_fz36 {
+      font-size: 32px;
+    }
+    &_fz48 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.promo {
+  min-height: 100vh;
+  position: relative;
+  background: url("../img/header.svg") no-repeat 50% / cover;
+  padding-top: 205px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__right {
+    animation: morph 6s ease-in-out infinite;
+    background-image: url("../img/preview.jpg");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    height: 350px;
+    position: relative;
+    transition: all 1s ease-in-out;
+    width: 350px;
+    bottom: 100px;
+  }
+  &__buttons {
+    margin-top: 25px;
+    display: flex;
+    max-width: 350px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__subtitle {
+    z-index: 1;
+    padding-left: 10px;
+    position: relative;
+    @include before_circle;
+  }
+  &__link {
+    color: black;
+    font-weight: 700;
+    transition: 0.5s all ease-out;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+/* 992 */
+/* Стили работают только если монитор меньше 1200 пикселей */
+@media (max-width: 1200px) {
+  .promo__right {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* 768 */
+@media (max-width: 991px) {
+  .promo__right {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* 576 */
+@media (max-width: 767px) {
+  .promo {
+    padding-top: 205px;
+    min-height: 125vh;
+    &__wrapper {
+      flex-direction: column-reverse;
+    }
+    &__right {
+      margin: 0 auto;
+      width: 300px;
+      height: 300px;
+    }
+    &__left {
+      text-align: center;
+    }
+    &__title {
+      height: 125px;
+    }
+    &__buttons {
+      margin: 0 auto;
+    }
+    &__subtitle {
+      font-size: 26px;
+      display: inline;
+      &:before {
+        top: 0%;
+        /*         left: 218px; */
+      }
+    }
+  }
+}
+/* 320px */
+@media (max-width: 575px) {
+  .promo {
+    &__right {
+      margin: 0 auto;
+      width: 250px;
+      height: 250px;
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.about {
+  padding-top: 120px;
+  .divider {
+    margin: 0;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: 400px 570px;
+    justify-content: space-between;
+  }
+
+  &__photo {
+    position: relative;
+    /*     width: 400px; */
+
+    span {
+      background-color: #fff;
+      border-radius: 50%;
+      bottom: -33px;
+      height: 190px;
+      position: absolute;
+      right: -64px;
+      width: 190px;
+    }
+  }
+  &__img {
+    border-radius: 10px;
+    width: 400px;
+  }
+  &__img2 {
+    animation: rotate 9s linear infinite;
+    width: 190px;
+  }
+
+  &__me {
+    position: relative;
+    @include before_circle;
+  }
+
+  &__descr {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    /*     max-width: 600px; */
+  }
+  &__blocks {
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__block {
+    position: relative;
+    padding-left: 60px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    max-width: 200px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  &__icon {
+    position: absolute;
+    top: -3px;
+    left: 3px;
+    @include before_circle;
+    img {
+      position: absolute;
+      left: 17px;
+      top: 14px;
+    }
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* 992 */
+/* Стили работают только если монитор меньше 1200 пикселей */
+@media (max-width: 1200px) {
+  .about__img {
+    width: 360px;
+  }
+  .about__wrap {
+    grid-template-columns: 350px 530px;
+  }
+  .about__photo span {
+    height: 150px;
+
+    width: 150px;
+  }
+  .about__img2 {
+    width: 150px;
+  }
+}
+
+/* 768 */
+@media (max-width: 991px) {
+  .about {
+    padding-top: 100px;
+  }
+  .about__img {
+    width: 300px;
+  }
+  .about__wrap {
+    grid-template-columns: 320px 420px;
+  }
+  .about__photo span {
+    height: 120px;
+    bottom: 170px;
+    right: -1px;
+    width: 120px;
+  }
+  .about__img2 {
+    width: 120px;
+  }
+}
+
+/* 576 */
+@media (max-width: 767px) {
+  .about {
+    padding-top: 0;
+  }
+  .about__wrap {
+    grid-template-columns: 1fr;
+  }
+  .about__photo {
+    margin: 0 auto;
+  }
+  .about__photo span {
+    height: 120px;
+    bottom: -30px;
+    right: -7px;
+  }
+  .about__left {
+    margin-top: 20px;
+  }
+}
+/* 320px */
+@media (max-width: 575px) {
+  .about__blocks {
+    grid-template-columns: 1fr;
+  }
+  .about__desc {
+    width: 90%;
+    max-width: none;
+  }
+}

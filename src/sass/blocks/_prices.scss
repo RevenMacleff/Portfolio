@@ -1,0 +1,68 @@
+.prices {
+  padding-top: 60px;
+  &__wrap {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 60px;
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(224px, auto));
+    justify-content: space-between;
+  }
+
+  &__block {
+    margin-bottom: 15px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    position: relative;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+    @include before_circle;
+    &:before {
+      left: -20px;
+      top: 19%;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+  }
+
+  &__descr {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+  }
+}
+/* 992 */
+/* Стили работают только если монитор меньше 1200 пикселей */
+@media (max-width: 1200px) {
+}
+
+/* 768 */
+@media (max-width: 991px) {
+}
+
+/* 576 */
+@media (max-width: 767px) {
+  .prices__wrap {
+    grid-template-columns: 1fr;
+  }
+}
+/* 320px */
+@media (max-width: 575px) {
+}
